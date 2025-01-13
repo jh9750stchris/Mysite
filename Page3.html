@@ -8,7 +8,131 @@
         /* General body styles */
         body {
             font-family: 'Courier New', monospace;
-            background-color: #e11606;
+            background-color: #e11606; /* Bold red background */
             margin: 0;
             padding: 0;
+            color: #fff; /* White text for contrast */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
+
+        /* Header styles */
+        h1 {
+            font-size: 3em;
+            color: #FFD700; /* Gold color */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            margin: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Secondary heading styles */
+        h2 {
+            font-size: 1.5em;
+            color: #FFF;
+            max-width: 80%;
+            margin: 20px;
+            animation: fadeIn 2s ease-in-out 1s; /* Delay for secondary text */
+        }
+
+        /* Add animations for smoother transitions */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Image styles */
+        .sigma-img {
+            width: 250px;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            animation: bounce 2s infinite alternate; /* Add bounce animation */
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        /* Button styles */
+        a {
+            background-color: #FFD700;
+            color: black;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover, a:active {
+            background-color: #FF1493; /* Pinkish hover color */
+            color: white;
+        }
+
+        /* Button container */
+        .button-container {
+            margin-top: 30px;
+        }
+
+        /* Footer styling */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #111;
+            color: #FFD700;
+            text-align: center;
+            font-size: 1em;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Responsive image for smaller screens */
+        @media (max-width: 600px) {
+            .sigma-img {
+                width: 200px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>All About Sigma Boi</h1>
+    <h2>Sigma Boi is a legendary character in internet culture known for his bold and confident personality. His journey through memes and internet trends has made him a symbol of independence and strength.</h2>
+
+    <!-- Image of Sigma Boi (replace with actual image) -->
+    <img src="sigma-boi.jpg" alt="Sigma Boi Image" class="sigma-img">
+
+    <!-- Button Container -->
+    <div class="button-container">
+        
+        <a href="next-page.html">BACK</a>
+        <a href="next-page.html">NEXT</a>
+    </div>
+
+ 
+
+</body>
+</html>
