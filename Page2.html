@@ -7,8 +7,87 @@
         /* General body styles */
         body {
             font-family: 'Courier New', monospace;
-            background-color: #a50794;
+            background-color: #a50794; /* Purple background */
+            color: #fff; /* White text for contrast */
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('nyan-cat.gif'); /* Nyan Cat GIF as background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
         }
-     
+
+        /* Header styles */
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            color: #FFD700; /* Gold color for header */
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #fff;
+            max-width: 80%;
+            margin: 20px;
+        }
+
+        /* Link button styles */
+        a:link, a:visited {
+            background-color: #FFD700;
+            color: black;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover, a:active {
+            background-color: #FF1493; /* Pinkish hover color */
+            color: white;
+        }
+
+        /* Small text or footer styling */
+        .footer {
+            font-size: 0.9em;
+            margin-top: 30px;
+            color: #FFD700;
+        }
+
+        /* Button container */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        /* Nyan Cat Image styling */
+        .nyan-cat-img {
+            width: 200px; /* Adjust size of the image */
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ALL ABOUT NYAN CATS</h1>
+    <h2>
+        Nyan Cat, an internet meme, features a pixelated cat with a Pop-Tart body flying through space, leaving a rainbow trail behind. It became wildly popular after the release of its viral video in 2011. With its catchy tune and colorful imagery, it has become a beloved symbol of internet culture.
+    </h2>
+
+    <!-- Nyan Cat Image -->
+    <img src="nyan-cat.png" alt="Nyan Cat flying through space" class="nyan-cat-img">
+
+    <div class="button-container">
+        <a href="nyan-page.html" target="_blank">NEXT</a>
+    </div>
+
+</body>
+</html>
