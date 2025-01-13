@@ -1,22 +1,78 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memes</title>
     <style>
-        /* General body styles */
         body {
             font-family: 'Courier New', monospace;
             background-color: #dccfab;
-            background-image: url
+            background-image: url('your-background-image.jpg'); 
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cool Meme Page</title>
+    <style>
+        
+        body {
+            font-family: Comic Sans MS, sans-serif;
+            background-color: #ffcccb; 
+            background-image: url('your-background-image.jpg'); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
         }
 
-    <body>
-        <h1>Memes<h1>
-        </body>
+        h1 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #ff4500; 
+            text-shadow: 2px 2px #000000; 
+        }
 
-        <div class="" onclick="showPopup('ur text', 'ur pic')">
-      <img src="(DOGE-removebg-preveiw.png)" alt="Doge" class="player-img">
-      <div class="player-name">Ur name</div>
-      <div class="">Position</div>
+        .player {
+            display: inline-block;
+            text-align: center;
+            margin: 5px;
+            cursor: pointer;
+            width: 80px; 
+            border: 2px dashed #0000ff; 
+            padding: 5px;
+            background-color: #ffffe0; 
+        }
+
+        .player img {
+            width: 60px; 
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #ff69b4; 
+        }
+
+        .player-name, .player-position {
+            font-size: 12px; 
+            margin-top: 3px;
+            color: #008000; 
+        }
+    </style>
+</head>
+<body>
+    <h1>💥 Welcome to My Meme Page! 💥</h1>
+
+    <div class="player" onclick="alert('LOL! You clicked the meme! 😂')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Original_Doge_meme.jpg" alt="Doge">
+        <div class="player-name">Doge</div>
+        <div class="player-position">Meme King</div>
     </div>
-        </html>
+</body>
+</html>
