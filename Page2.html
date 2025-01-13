@@ -70,9 +70,11 @@
 
         /* Nyan Cat Image styling */
         .nyan-cat-img {
-            width: 200px; /* Adjust size of the image */
+            width: 300px; /* Adjust width of the image */
+            height: auto; /* Maintain aspect ratio */
             margin-top: 30px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for effect */
         }
     </style>
 </head>
@@ -83,11 +85,13 @@
     </h2>
 
     <!-- Nyan Cat Image -->
-<img src="image.jpeg" alt="Nyan Cat flying through space" class="nyan-cat-img">
+    <img src="image.jpeg" alt="Nyan Cat flying through space" class="nyan-cat-img">
 
-<div class="button-container">
-    <a href="nyan-page.html" target="_blank">NEXT</a>
-</div>
+    <!-- Back and Next Buttons -->
+    <div class="button-container">
+        <a href="javascript:history.back();">BACK</a>
+        <a href="nyan-page.html" target="Page3.html">NEXT</a>
+    </div>
 
 </body>
 </html>
