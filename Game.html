@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Catcher Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #game-container {
+      text-align: center;
+    }
+
+    #score {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .meme {
+      font-size: 50px;
+      position: absolute;
+      transition: top 1s linear;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    #gameArea {
+      position: relative;
+      height: 300px;
+      width: 300px;
+      border: 2px solid black;
+      margin: 20px auto;
+      background-color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Meme Catcher Game</h1>
+    <div id="score">Score: 0</div>
+    <div id="gameArea">
+      <div class="meme" id="doge" onclick="catchMeme('doge')">🐶</div>
+      <div class="meme" id="nyanCat" onclick="catchMeme('nyanCat')">🌈🐱</div>
+      <div class="meme" id="skibidi" onclick="catchMeme('skibidi')">🚽</div>
+    </div>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <script>
+    let score = 0;
+    let memeSpeed = 5; // Speed of falling memes (initial)
+    let memeInterval = 1000; // Interval for falling memes (initial)
+    let gameInterval;
+    let memeTypes = ['doge', 'nyanCat', 'skibidi'];
+    let missedMemeCount = 0;
+
+    function startGame() {
+      score = 0;
+      missedMemeCount = 0;
+      memeSpeed = 5;
+      memeInterval = 1000;
+      document.getElementById('score').innerText = 'Score: ' + score;
+      gameInterval = setInterval(dropMeme, memeInterval);
+      // Increase difficulty over time
+      setInterval(increaseDifficulty, 5000); // Every 5 seconds
+    }
+
+    function dropMeme() {
+      const memeType = memeTypes[Math.floor(Math.random() * memeTypes.length)];
+      const meme = document.getElementById(memeType);
+      const gameArea = document.getElementById('gameArea');
+      
+      meme.style.top = "0px";
+      meme.style.left = Math.random() * (gameArea.clientWidth - meme.offsetWidth) + "px";
+      
+      let fallingInterval = setInterval(function() {
+        let currentTop = parseInt(meme.style.top.replace('px', ''));
+        
+        if (currentTop < gameArea.clientHeight - meme.offsetHeight) {
+          meme.style.top = currentTop + memeSpeed + "px";
+        } else {
+          clearInterval(fallingInterval);
+          missedMemeCount++;
+          if (missedMemeCount >= 3) {
+            gameOver();
+          } else {
+            meme.style.top = '0px'; // reset position after falling
+          }
+        }
+      }, 20);
+    }
+
+    function catchMeme(memeType) {
+      score += 10; // Increase score
+      document.getElementById('score').innerText = 'Score: ' + score;
+    }
+
+    function increaseDifficulty() {
+      if (memeInterval > 500) { // Increase speed and frequency, but not too fast
+        memeInterval -= 100; // Shorten the interval between falling memes
+        memeSpeed += 1; // Increase the speed of the falling memes
+        clearInterval(gameInterval); // Clear the old interval
+        gameInterval = setInterval(dropMeme, memeInterval); // Start the new interval
+      }
+    }
+
+    function gameOver() {
+      clearInterval(gameInterval);
+      alert("Game Over! Your final score is: " + score);
+    }
+  </script>
+</body>
+</html>
